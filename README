@@ -1,0 +1,16 @@
+Instructions for execution
+---------------------------
+make clean
+make all
+./write_backup ls -l -t -r
+---------------------------
+
+This ptrace based extension creates backups for files before they are being written. It creates backups for cases like opening a file for write access, renaming a file, truncating a file, writing to a file. The backups are stored with timestamp to maintain versioning in '/home/sekar/bk'. If bk folder doesnt exist, the program creates the folder and then writes to it. Extensions of files are also preserved. 
+
+There is also a test file test.c used for testing the above scenarios and can be used like:
+
+./write_backup ./test_ans
+
+References
+https://www.linuxjournal.com/article/6100
+stackoverflow.com
